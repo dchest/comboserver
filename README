@@ -36,7 +36,7 @@ Files can be combined in any way:
 
 The program preserves the order of request, doesn't allow repeated
 filenames, and limits the number of files to 50 by default. Content-type
-header of the reponse is set to the type of the first file in list.
+header of response is set to the type of the first file in list.
 
 Comboserver doesn't do any caching, as it's a job of whatever nginx you put
 in front of it.
