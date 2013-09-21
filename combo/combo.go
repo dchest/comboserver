@@ -28,6 +28,10 @@ type Handler struct {
 }
 
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" && r.Method != "HEAD" {
+		http.Error(w, "Bad request method", http.StatusBadRequest)
+		return
+	}
 	if h.URLPath != "" && h.URLPath != r.URL.Path {
 		http.NotFound(w, r)
 		return
