@@ -52,11 +52,11 @@ var (
 )
 
 func main() {
-	flag.Parse()
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: %s <directory>\n", os.Args[0])
 		flag.PrintDefaults()
 	}
+	flag.Parse()
 	if flag.NArg() < 1 {
 		flag.Usage()
 		os.Exit(1)
